@@ -133,3 +133,10 @@ Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno sti
 */
 
 // Milestone 1
+const container = document.getElementById("container");
+
+icons.forEach(element => {
+	let div = document.createElement("div");
+	divContent = div.innerHTML = `<div class="icon-container"> <div class="${element.type}"> <i class = "${element.family} ${element.prefix}${element.name}"></i> </div> <p>${element.name}</p> </div>`
+	container.append(div); 
+});
