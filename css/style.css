@@ -82,6 +82,10 @@ p {
     text-transform: uppercase;
 }
 
+.hide {
+    display: none;
+}
+
 /*
 Colori:
 bg: #dddddd

@@ -135,8 +135,47 @@ Inizialmente può essere sufficiente stampare dei semplici div, senza alcuno sti
 // Milestone 1
 const container = document.getElementById("container");
 
-icons.forEach(element => {
-	let div = document.createElement("div");
-	divContent = div.innerHTML = `<div class="icon-container"> <div class="${element.type}"> <i class = "${element.family} ${element.prefix}${element.name}"></i> </div> <p>${element.name}</p> </div>`
-	container.append(div); 
-});
+elementMaker(container, icons)
+
+const selected = document.getElementById('selector');
+
+selected.addEventListener("click",
+	function() {
+		// Pulisco l'attuale contenuto di "container"
+		container.innerHTML = "";
+		
+		if (this.value === "all") {
+			elementMaker (container, icons)
+		} else if (this.value === "animal") {
+			const animalIcons = icons.filter((element) => {
+				if (element.type === "animal") {
+					return true
+				} else false
+			});
+			elementMaker (container, animalIcons);
+		} else if (this.value === "vegetable") {
+			const vegetableIcons = icons.filter((element) => {
+				if (element.type === "vegetable") {
+					return true
+				} else false
+			});
+			elementMaker (container, vegetableIcons);
+		} else if (this.value === "user") {
+			const userIcons = icons.filter((element) => {
+				if (element.type === "user") {
+					return true
+				} else false
+			});
+			elementMaker (container, userIcons);
+		}
+	}
+);
+
+// FUNCTIONS
+function elementMaker (container, array) {
+	array.forEach(element => {
+		let div = document.createElement("div");
+		divContent = div.innerHTML = `<div class="icon-container"> <div class="${element.type}"> <i class = "${element.family} ${element.prefix}${element.name}"></i> </div> <p>${element.name}</p> </div>`
+		container.append(div); 
+	});
+};
