@@ -5,6 +5,49 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #dddddd;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding: 2rem;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: #29b1dd;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 2px 2px #888888;
+    background-color: #f5f5f5;
+}
+
+.big {
+
+}
+
 /*
 Colori:
 bg: #dddddd
